@@ -34,7 +34,6 @@ ul{
 }
 .list ul li:hover{
     box-shadow: 1px 1px 1px 1px #b8b8b8;
-    border: 2px solid #ffffff;
 }
 .list ul li:active{
     color: #ed9224;
@@ -69,9 +68,7 @@ ul{
 @media only screen and (min-width: 360px) and (max-width: 480px) {
     .list{
         justify-content: center;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+
         margin-top: 20px;
     }
     .books{
