@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Filter </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+<body>
+    
+    <h2 class="title">Best Books To Read</h2>
+    
+  <div class="list">
+      <ul id="list-filter">
+          <li class=" filter active" data-filter="*">All</li>
+          <li class="filter" data-filter=".paulo">Paulo Coehlo</li>
+          <li class="filter" data-filter=".robin">Robin Sharma</li>
+          <li class="filter" data-filter=".chethan">Chethan Bhagat</li>
+          <li class="filter" data-filter=".jeffrey">Jeffrey Archer</li>
+      </ul>
+  </div>
+  <div class="books">
+
+        <div class="book paulo">
+            <img src="images/paulo_image1.jpg" alt="Paulo">
+            <p>Title : The Alchemist Kindle Edition</p>
+            <p>Price : ₹ 75.00</p> 
+        </div>
+        <div class="book paulo">
+                <img src="images/paulo_image2.jpg" alt="Paulo">
+                <p>Title : Eleven Minutes Kindle Edition</p>
+                <p>Price : ₹ 236.21</p> 
+        </div>
+        <div class="book paulo">
+                <img src="images/paulo_image3.jpg" alt="Paulo">
+                <p>Title : The Fifth Mountain Kindle Edition</p>
+                <p>Price : ₹ 177.58</p>                 
+        </div>
+        <div class="book paulo">
+                <img src="images/paulo_image4.jpg" alt="Paulo">
+                <p>Title : Like the Flowing River Kindle Edition</p>
+                <p>Price : ₹ 168.58 </p>
+        </div>
+        <div class="book paulo">
+                <img src="images/paulo_image5.jpg" alt="Paulo">
+                <p>Title : Veronika Decides to Die Kindle Edition</p>
+                <p>Price : ₹ 142.39</p>          
+        </div>
+        <div class="book robin">
+                <img src="images/Robin_image1.jpg" alt="Paulo">
+                <p>Title : The Monk Who Sold His Ferrari Kindle Edition</p>
+                <p>Price : ₹ 49.00</p>          
+        </div>
+        <div class="book robin">
+                <img src="images/Robin_image2.jpg" alt="Paulo">
+                <p>Title : The 5 AM Club Kindle Edition</p>
+                <p>Price : ₹ 79.00</p>          
+        </div>
+        <div class="book robin">
+                <img src="images/Robin_image3.jpg" alt="Paulo">
+                <p>Title : Who Will Cry When You Die? Kindle Edition</p>
+                <p>Price : ₹ 40.86</p>          
+        </div>
+        <div class="book robin">
+                <img src="images/Robin_image4.jpg" alt="Paulo">
+                <p>Title : Family Wisdom From The Monk Who Sold His Ferrari Kindle Edition</p>
+                <p>Price : ₹ 195.00</p>          
+        </div>
+        <div class="book robin">
+                <img src="images/Robin_image5.jpg" alt="Paulo">
+                <p>Title : Leadership Wisdom From The Monk Who Sold His Ferrari Kindle Edition</p>
+                <p>Price : ₹ 184.17</p>          
+        </div>
+        <div class="book chethan">
+                <img src="images/chetan_image1.jpg" alt="Paulo">
+                <p>Title : The Girl in Room 105 Kindle Edition</p>
+                <p>Price : ₹ 49.00</p>          
+        </div>
+        <div class="book chethan">
+                <img src="images/chetan_image2.jpg" alt="Paulo">
+                <p>Title : One Indian Girl Kindle Edition</p>
+                <p>Price : ₹ 49.00</p>          
+        </div>
+        <div class="book chethan">
+                <img src="images/chetan_image3.jpg" alt="Paulo">
+                <p>Title : Revolution Twenty20 Kindle Edition</p>
+                <p>Price : ₹ 114.79</p>          
+        </div>
+        <div class="book jeffrey">
+                <img src="images/jeffrey_image1.jpg" alt="Paulo">
+                <p>Title : Only Time Will Tell</p>
+                <p>Price : ₹ 0.00</p>          
+        </div>
+        <div class="book jeffrey">
+                <img src="images/jeffrey_image2.jpg" alt="Paulo">
+                <p>Title : Nothing Ventured: The Sunday Times #1 Bestseller</p>
+                <p>Price : ₹ 225.00</p>          
+        </div>
+
+  </div>
+
+
+  <script src="isotope-docs/isotope.pkgd.min.js"></script>
+
+  <script>
+
+    $(document).ready( function() {   
+
+            $('.books').isotope({
+            itemSelector: '.book',
+            });
+
+            // filter items on button click
+            $('.list').on( 'click', 'li', function() {
+            var filterValue = $(this).attr('data-filter');
+            $('.books').isotope({ filter: filterValue });
+            $('.list li').removeClass('active');
+            $(this).addClass('active');
+            });
+})
+
+  </script>
+
+</body>
+</html>
